@@ -151,4 +151,4 @@ def load_model(
     if alignment_heads is not None:
         model.set_alignment_heads(alignment_heads)
 
-    return model.to(device)
+    return torch.compile(model.to(device))
